@@ -5,6 +5,7 @@ import { Layout } from './Layout';
 import Main from './Main';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './home/Home';
+import Movie from './Movie';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home/>
-        
         // loader: dashboardLoader,
         // action: dashboardAction,
         // errorElement: <Error/>
@@ -28,7 +28,12 @@ const router = createBrowserRouter([
       { 
         path: "/favorites",
         element: <Favorites/>
+      },
+      {
+        path: "/:movieId",
+        element: <Movie />,
       }
+
     ]
   },
   // {

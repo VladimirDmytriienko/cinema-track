@@ -18,7 +18,7 @@ const Main = () => {
       const { data: { results } } = response;
       setMovies(results);
     } catch (error) {
-      alert.error(error);
+      console.log(error);
     }
   };
 
@@ -37,10 +37,14 @@ const Main = () => {
     ))
   );
 
-  return (
+  return (<>
+    
     <div className="wrapper">
       {renderMovies()}
+
+   
     </div>
+  </>
   );
 };
 
