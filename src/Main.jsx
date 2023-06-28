@@ -27,14 +27,21 @@ const Main = () => {
   }, []);
 
   const renderMovies = () => (
-    movies.map(movie => (
-      <MovieCard
-        key={movie.id}
-        movie={movie}
-        isFavorite={favorites.some(fav => fav.id === movie.id)}
-        toggleFavorite={toggleFavorite}
-      />
-    ))
+    movies.map(movie => {
+      const updatedMovie = {
+        ...movie,
+        media_type: "movie"
+      };
+      
+      return (
+        <MovieCard
+          key={updatedMovie.id}
+          movie={updatedMovie}
+          isFavorite={favorites.some(fav => fav.id === updatedMovie.id)}
+          toggleFavorite={toggleFavorite}
+        />
+      );
+    })
   );
 
   return (<>

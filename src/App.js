@@ -1,3 +1,4 @@
+
 import './App.css';
 import { ErrorPage } from './ErrorPage';
 import Favorites from './Favorites';
@@ -6,6 +7,7 @@ import Main from './Main';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './home/Home';
 import Movie from './Movie';
+import SearchPage from './search-page/SearchPage';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
       { 
         path: "/favorites",
         element: <Favorites/>
+      },
+      { 
+        path: "/search",
+        element: <SearchPage/>
       },
       {
         path: "/:movieId",

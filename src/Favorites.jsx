@@ -29,7 +29,10 @@ const Favorites = () => {
   return (
     <div>
       Favorites
-      {renderFavorites()}
+      <div className='wrapper'>
+        { renderFavorites()}
+      </div>
+      
     </div>
   );
 };
