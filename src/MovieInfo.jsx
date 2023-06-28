@@ -3,11 +3,13 @@ import useMovie from "./custom-hook/useMovie"
 
 const MovieInfo = () => {
     const {movieId} = useParams()
+    // console.log(movieId)
     const {movie} = useMovie(movieId)
-
+    
   return (
     <div>
-      <h2>{movie.title}</h2>
+      {/* {console.log(movieId)} */}
+      {/* <h2>{movie.title}</h2> */}
       <p>{movie.overview}</p>
       <p>Release Date: {movie.release_date}</p>
       <img

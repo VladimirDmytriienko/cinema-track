@@ -9,10 +9,7 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const { favorites, toggleFavorite } = useFavorites();
 
-
   const fetchPopularMovies = async (time) => {
-
-
     try {
       const response = await axios.get(`${API_URL}/trending/all/${time}`, {
         params: {
@@ -26,7 +23,6 @@ const Home = () => {
       console.log(error);
     }
   };
-
   const handleTimeChange = (time) => {
     setTime(time);
     fetchPopularMovies(time); 
@@ -35,8 +31,6 @@ const Home = () => {
   useEffect(() => {
     fetchPopularMovies(time);
   }, [time]); 
-
-
 
   const renderMovies = () => (
     movies.map((movie) => (
