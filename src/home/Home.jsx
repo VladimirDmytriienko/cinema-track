@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "../components/MovieCard";
 import useFavorites from "../custom-hook/useFavorites";
+import SwiperComponent from "../SwiperComponent";
 
 const Home = () => {
   const API_URL = "https://api.themoviedb.org/3";
@@ -31,9 +32,10 @@ const Home = () => {
   useEffect(() => {
     fetchPopularMovies(time);
   }, [time]); 
-
   const renderMovies = () => (
+    
     movies.map((movie) => (
+      
       <MovieCard
         key={movie.id}
         movie={movie}
@@ -45,6 +47,7 @@ const Home = () => {
 
   return (
     <>
+      <SwiperComponent movies={movies}/>
       <button onClick={() => handleTimeChange("week")}>Week</button>
       <button onClick={() => handleTimeChange("day")}>Day</button>
       <div className="wrapper">
