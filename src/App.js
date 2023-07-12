@@ -1,4 +1,3 @@
-
 import './App.css';
 import { ErrorPage } from './ErrorPage';
 import Favorites from './Favorites';
@@ -8,6 +7,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './home/Home';
 import Movie from './Movie';
 import SearchPage from './search-page/SearchPage';
+import { AuthContextProvider } from './context/AuthContext';
+import Login from './pages/Login';
+import SignUp from './pages/signUp/SignUp';
+import Account from './pages/Account';
+import ProtectedRoute from './components/movie-card/ProtectedRoute';
 
 
 const router = createBrowserRouter([
@@ -36,6 +40,18 @@ const router = createBrowserRouter([
         path: "/search",
         element: <SearchPage/>
       },
+      { 
+        path: "/login",
+        element: <Login/>
+      },
+      { 
+        path: "/signup",
+        element: <SignUp/>
+      },
+      { 
+        path: "/account",
+        element: <ProtectedRoute> <Account/> </ProtectedRoute> 
+      },
       {
         path: "/:movieId",
         element: <Movie />,
@@ -53,7 +69,10 @@ const App = () => {
 
   return (
     <div className="App">
+      <AuthContextProvider>
         <RouterProvider router={router} />
+      </AuthContextProvider>
+
     </div>
   );
 };

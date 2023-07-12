@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import './movieCard.css'
 const MovieCard = ({ movie, isFavorite, toggleFavorite }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/w342/";
 
@@ -14,16 +14,18 @@ const MovieCard = ({ movie, isFavorite, toggleFavorite }) => {
         />
     
       </div>
+      <div>
+        <p>{movie.id}</p>
+        <h5>{movie.title || movie.name}</h5>
+        <p>&#9734; {movie.vote_average}</p>
+        <button onClick={() => toggleFavorite(movie)}>
+          {isFavorite ? "★" :  "☆"}
+        </button>
+        <Link to={`/${movie.media_type}${movie.id}`}>
+            details
+        </Link>
+      </div>
 
-      <p>{movie.id}</p>
-      <h5>{movie.title || movie.name}</h5>
-      <p>&#9734; {movie.vote_average}</p>
-      <button onClick={() => toggleFavorite(movie)}>
-        {isFavorite ? "★" :  "☆"}
-      </button>
-      <Link to={`/${movie.media_type}${movie.id}`}>
-          details
-      </Link>
     </div>
   );
 };
