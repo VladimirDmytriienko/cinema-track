@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import MovieCard from './components/MovieCard';
+import MovieCard from './components/movie-card/MovieCard';
 import useFavorites from './custom-hook/useFavorites';
 
 
@@ -10,11 +10,11 @@ const Favorites = () => {
   useEffect(() => {
     setFavoriteMovies(favorites);
   }, [favorites]);
-
+  
   const renderFavorites = () => {
     if (favoriteMovies.length > 0) {
       return favoriteMovies.map((movie) => (
-        <MovieCard
+        <MovieCard 
           key={movie.id}
           movie={movie}
           isFavorite={true}

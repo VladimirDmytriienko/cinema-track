@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../components/movie-card/MovieCard";
 import useFavorites from "../custom-hook/useFavorites";
 import SearchBar from "../SearchBar";
-
-
-
 
 const SearchPage = () => {
   const [type, setType] = useState("movie");
