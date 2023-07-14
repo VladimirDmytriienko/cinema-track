@@ -2,7 +2,7 @@ import { Link, NavLink, Outlet, useNavigate } from "react-router-dom"
 import '../layout/layout.css'
 import { UserAuth } from "../context/AuthContext"
 import { ToastContainer } from "react-toastify"
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import TheatersOutlinedIcon from '@mui/icons-material/TheatersOutlined';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
