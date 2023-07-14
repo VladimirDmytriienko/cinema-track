@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import MovieCard from './components/movie-card/MovieCard';
-import useFavorites from './custom-hook/useFavorites';
-
-const Main = () => {
+import MovieCard from '../../components/movie-card/MovieCard';
+import useFavorites from '../../custom-hook/useFavorites';
+import './movies-styles.css'
+const Movies = () => {
   const API_URL = "https://api.themoviedb.org/3";
   const { favorites, toggleFavorite } = useFavorites();
   const [movies, setMovies] = useState([]);
@@ -32,27 +32,31 @@ const Main = () => {
         ...movie,
         media_type: "movie"
       };
-      
+
       return (
-        <MovieCard
+        <div className='movie-item'>
+          <MovieCard
           key={updatedMovie.id}
           movie={updatedMovie}
           isFavorite={favorites.some(fav => fav.id === updatedMovie.id)}
           toggleFavorite={toggleFavorite}
-        />
+          />
+        </div>
+
       );
     })
   );
 
-  return (<>
-    
-    <div className="wrapper">
-      {renderMovies()}
+  return (<div className='movies'>
 
-   
-    </div>
-  </>
+  <div className="wrapper-movies">
+
+    {renderMovies()}
+
+
+  </div>
+</div>
   );
 };
 
-export default Main;
+export default Movies;

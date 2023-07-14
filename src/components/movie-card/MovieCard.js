@@ -1,30 +1,46 @@
 import { Link } from "react-router-dom";
-import './movieCard.css'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./movieCard.css";
+import StarHalfTwoToneIcon   from "@mui/icons-material/StarHalfTwoTone";
+import StarRoundedIcon from '@material-ui/icons/StarRounded';
+import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded';
+
 const MovieCard = ({ movie, isFavorite, toggleFavorite }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/w342/";
 
   return (
     <div className="movie-card">
-      {/* {console.log(movie)} */}
-      <div className="movie-car"> 
+      <div className="movie-card_poster">
         <img
           className="movie-card__img"
           src={`${IMAGE_PATH}${movie.poster_path}`}
           alt="poster"
         />
-    
       </div>
-      <div>
-        <p>{movie.id}</p>
+      <div className="info-favorites"
+        onClick={() => {
+          toggleFavorite(movie);
+          toast(isFavorite ? "Removed from favorites" : "Added to favorites");
+        }}
+        
+      >
+        {isFavorite ?   <StarRoundedIcon fontSize="large"/> : <StarBorderRoundedIcon fontSize="large"/> }
+      </div>
+      <div className="card-info">
+        {/* <p>{movie.id}</p> */}
         <h5>{movie.title || movie.name}</h5>
-        <p>&#9734; {movie.vote_average}</p>
-        <button onClick={() => toggleFavorite(movie)}>
-          {isFavorite ? "★" :  "☆"}
-        </button>
-        <Link to={`/${movie.media_type}${movie.id}`}>
-            details
-        </Link>
+        <span >
+          <p className="card-vote">
+            {" "}
+            <StarHalfTwoToneIcon className="vote_star" /> {movie.vote_average} /
+            10
+          </p>
+          <Link to={`/${movie.media_type}${movie.id}`}>details</Link>
+        </span>
+
       </div>
+
 
     </div>
   );

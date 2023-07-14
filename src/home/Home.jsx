@@ -4,12 +4,15 @@ import MovieCard from "../components/movie-card/MovieCard";
 import useFavorites from "../custom-hook/useFavorites";
 import SwiperComponent from "../SwiperComponent";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Toggle from "./toggle/Toggle";
+import requests from "../functions/requests";
+import Row from "./row/Row";
 // import 'swiper/css';
 // import 'swiper/css/pagination';
 // import 'swiper/css/navigation';
 const Home = () => {
   const API_URL = "https://api.themoviedb.org/3";
-  const [time, setTime] = useState("week");
+  const [time, setTime] = useState("day");
   const [movies, setMovies] = useState([]);
   const { favorites, toggleFavorite } = useFavorites();
 
@@ -30,13 +33,24 @@ const Home = () => {
   const handleTimeChange = (time) => {
     setTime(time);
     fetchPopularMovies(time); 
-    };
+  };
 
   useEffect(() => {
     fetchPopularMovies(time);
   }, [time]); 
+  
   const renderMovies = () => (
-    <Swiper  slidesPerView={4} spaceBetween={30} loop={true} >
+    <Swiper className="trending"  slidesPerView={4}     breakpoints={{
+      0: {
+        slidesPerView: 2,
+      },
+      450: {
+        slidesPerView: 2,
+      },
+      865:{
+        slidesPerView:3
+      }
+    }}  spaceBetween={30} loop={true} >
       {movies.map((movie) => (
         <SwiperSlide key={movie.id}>
           <MovieCard
@@ -52,12 +66,21 @@ const Home = () => {
 
   return (
     <>
-      <SwiperComponent movies={movies}/>
-      <button onClick={() => handleTimeChange("week")}>Week</button>
-      <button onClick={() => handleTimeChange("day")}>Day</button>
+      <SwiperComponent   movies={movies}/>
+      
       <div className="wrapper">
+        <div><Toggle handleTimeChange={handleTimeChange}/></div>
+        
+
         {renderMovies()}
+        <Row title="Upcoming" url={requests.requestUpcoming}></Row>
+        <Row title="Top rated" url={requests.requestTopRated}></Row>
+        <Row title="Popular" url={requests.requestPopular}></Row>
+        <Row title="Horor" url={requests.requestHorror}></Row>
       </div>
+
+      
+
     </>
   );
 };

@@ -2,18 +2,17 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import Modal from "@mui/material/Modal";
 import YouTube from "react-youtube";
 import fetchMovieTrailer from "./functions/fetchMovieTrailer";
 import { Link } from "react-router-dom";
+
 const SwiperComponent = ({ movies }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedVideoKey, setSelectedVideoKey] = useState("");
 
   const handleOpenModal = async (videoKey) => {
-
     try {
       const trailerKey = await fetchMovieTrailer(videoKey);
       setSelectedVideoKey(trailerKey);
@@ -40,14 +39,16 @@ const SwiperComponent = ({ movies }) => {
     <>
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         loop={true}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
+        modules={[Autoplay, Pagination]}
+        className="mySwiper banner-swiper"
       >
         {movies.map((movie) => (
           <SwiperSlide key={movie.id}>
@@ -57,15 +58,13 @@ const SwiperComponent = ({ movies }) => {
               src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
               alt="poster"
             />
-
-            <div className="banner-btn ">
-              <button className="play-button " onClick={() => handleOpenModal(movie.id)}> <p>Play</p> </button>
-              <button className="play-button " >
-                <Link  to={`/${movie.media_type}${movie.id}` }>
-                  Details
-                </Link>
+            <div className="banner-btn">
+              <button className="play-button" onClick={() => handleOpenModal(movie.id)}>
+                <p>Play</p>
               </button>
-              
+              <button className="play-button">
+                <Link to={`/${movie.media_type}${movie.id}`}>Details</Link>
+              </button>
             </div>
           </SwiperSlide>
         ))}

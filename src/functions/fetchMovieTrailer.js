@@ -1,7 +1,7 @@
 import axios from "axios";
+
 const fetchMovieTrailer = async (movieId) => {
   try {
-
     const response = await axios.get(
       `http://api.themoviedb.org/3/movie/${movieId}/videos`,
       {
@@ -13,7 +13,7 @@ const fetchMovieTrailer = async (movieId) => {
 
     const videos = response.data.results;
 
-    const trailerVideo = videos.find((vid) => vid.name === "Official Trailer");
+    const trailerVideo = videos.find((vid) => vid.name === "Official Trailer") || videos[0];
 
     if (trailerVideo) {
       return trailerVideo.key;
