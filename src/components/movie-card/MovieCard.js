@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./movieCard.css";
-import StarHalfTwoToneIcon   from "@mui/icons-material/StarHalfTwoTone";
+import StarHalfTwoToneIcon   from "@material-ui/icons/StarHalfTwoTone";
 import StarRoundedIcon from '@material-ui/icons/StarRounded';
 import StarBorderRoundedIcon from '@material-ui/icons/StarBorderRounded';
 
