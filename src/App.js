@@ -1,8 +1,8 @@
 import './App.css';
 import { ErrorPage } from './ErrorPage';
-import Favorites from './Favorites';
+// import Favorites from './Favorites';
 import { Layout } from './layout/Layout';
-import Main from './Main';
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './home/Home';
 import Movie from './Movie';
@@ -12,6 +12,10 @@ import Login from './pages/Login';
 import SignUp from './pages/signUp/SignUp';
 import Account from './pages/Account';
 import ProtectedRoute from './components/movie-card/ProtectedRoute';
+import Movies from './pages/movies-page/Movies';
+
+
+
 
 
 const router = createBrowserRouter([
@@ -30,12 +34,12 @@ const router = createBrowserRouter([
       },
       { 
         path: "/movies",
-        element: <Main/>,
+        element: <Movies/>
       },
-      { 
-        path: "/favorites",
-        element: <Favorites/>
-      },
+      // { 
+      //   path: "/favorites",
+      //   element:  <Favorites/>
+      // },
       { 
         path: "/search",
         element: <SearchPage/>

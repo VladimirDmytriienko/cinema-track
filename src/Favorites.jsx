@@ -10,11 +10,11 @@ const Favorites = () => {
   useEffect(() => {
     setFavoriteMovies(favorites);
   }, [favorites]);
-  
+
   const renderFavorites = () => {
     if (favoriteMovies.length > 0) {
       return favoriteMovies.map((movie) => (
-        <MovieCard 
+        <MovieCard
           key={movie.id}
           movie={movie}
           isFavorite={true}
@@ -28,11 +28,17 @@ const Favorites = () => {
 
   return (
     <div>
-      Favorites
-      <div className='wrapper'>
-        { renderFavorites()}
+      <div className='movies'>
+      <h2 className='favorites-heading'>Your favorites:</h2>
+        <div className="wrapper-movies">
+          
+
+          {renderFavorites()}
+
+
+        </div>
       </div>
-      
+
     </div>
   );
 };

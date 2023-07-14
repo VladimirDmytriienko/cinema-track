@@ -16,14 +16,21 @@ h1 {
 }
 .wrapper {
   margin: auto;
-  
   max-width: 1000px;
-
   display: flex;
+  flex-direction: column;
   /* display: grid;
   gap: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr; */
   
+}
+.wrapper .toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+}
+.wrapper_mini {
+  margin: 20px;
 }
 .movie-card {
  
@@ -41,11 +48,22 @@ a:visited, a:focus, a:hover {
 
 .banner-btn {
   position: relative;
-    z-index: 10;
-    top: -100px;
-    right: 360px;
+  margin: auto;
+  z-index: 10;
+  top: -20%;
+  right: 30%;
+  max-width: 300px;
+   @media (width <=600px) {
+    right: 0;
+  }
+
 
 }
 .banner-btn  button {
   margin: 10px;
+}
+.favorites-heading {
+  text-align: left;
+  color: whitesmoke;
+  padding-bottom: 8px;
 }

@@ -50,7 +50,7 @@ const MovieInfo = () => {
       autoplay: 1,
     },
   };
-
+  
   return (
     <div className="movieInfo" style={backdropStyle}>
       <div className="shadow"></div>

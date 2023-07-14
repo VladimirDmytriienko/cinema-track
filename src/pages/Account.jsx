@@ -1,7 +1,10 @@
-
+import Favorites from '../Favorites'
 const Account = () => {
   return (
-    <div>Account</div>
+    <div >
+      <Favorites></Favorites>
+    </div>
+    
   )
 }
 
