@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     @media (width <=850px) {
         justify-content: center;
 
@@ -44,8 +45,8 @@
 
 .header-links {
     display: flex;
-   
-    
+
+
 }
 
 .header-links span {
@@ -82,7 +83,7 @@
     display: flex;
     color: white;
     align-items: center;
-    
+
 }
 
 .log-wrapper a {
@@ -107,8 +108,30 @@
     display: flex;
     align-items: center;
 }
-.log-wrapper h3{
+
+.log-wrapper h3 {
     @media (width <=850px) {
+        display: none;
+    }
+}
+
+@media (max-width: 850px) {
+    .header {
+        position: fixed;
+        bottom: 0;
+        background-color: rgba(45, 44, 44, 1);
+    }
+    .header-wrp {
+        justify-content: center;
+    }
+
+    .header-logo {
+        display: none;
+    }
+    .header-links span {
+        display: none;
+    }
+    .log-wrapper h3 {
         display: none;
     }
 }

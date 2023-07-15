@@ -32,7 +32,7 @@ export const Layout = () => {
             </Link>
         
             <div className="header-links">
-              <NavLink to="/"> <HomeOutlinedIcon/> <span>Home</span> </NavLink>
+              <NavLink to="/cinema-track"> <HomeOutlinedIcon/> <span>Home</span> </NavLink>
               <NavLink to="/movies"><TheatersOutlinedIcon/> <span>Movies</span> </NavLink>
               {/* <NavLink to="/favorites">Favorites</NavLink> */}
               <NavLink to="/search"><SearchRoundedIcon/> <span>Search</span> </NavLink>

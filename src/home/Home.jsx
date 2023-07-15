@@ -44,11 +44,14 @@ const Home = () => {
       0: {
         slidesPerView: 2,
       },
-      450: {
+      600: {
         slidesPerView: 2,
       },
       865:{
         slidesPerView:3
+      },
+      1000:{
+        slidesPerView:4
       }
     }}  spaceBetween={30} loop={true} >
       {movies.map((movie) => (

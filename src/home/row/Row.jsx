@@ -36,11 +36,11 @@ const Row = ({ title, url }) => {
       0: {
         slidesPerView: 2,
       },
-      450: {
-        slidesPerView: 2,
+      600: {
+        slidesPerView: 3,
       },
-      865:{
-        slidesPerView:3
+      1000:{
+        slidesPerView:4
       }
     }}  loop={true}>
       {movies.map((movie) => (

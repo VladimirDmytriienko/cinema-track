@@ -27,6 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        path: '/cinema-track',
         element: <Home/>
         // loader: dashboardLoader,
         // action: dashboardAction,
