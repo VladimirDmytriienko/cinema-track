@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/cinema-track/static/css/main.e006d279.css",
-    "main.js": "/cinema-track/static/js/main.f8442f8a.js",
+    "main.css": "/cinema-track/static/css/main.8d33e80b.css",
+    "main.js": "/cinema-track/static/js/main.874d2029.js",
     "index.html": "/cinema-track/index.html",
-    "main.e006d279.css.map": "/cinema-track/static/css/main.e006d279.css.map",
-    "main.f8442f8a.js.map": "/cinema-track/static/js/main.f8442f8a.js.map"
+    "main.8d33e80b.css.map": "/cinema-track/static/css/main.8d33e80b.css.map",
+    "main.874d2029.js.map": "/cinema-track/static/js/main.874d2029.js.map"
   },
   "entrypoints": [
-    "static/css/main.e006d279.css",
-    "static/js/main.f8442f8a.js"
+    "static/css/main.8d33e80b.css",
+    "static/js/main.874d2029.js"
   ]
 }
