@@ -72,3 +72,33 @@
     border: 1px solid #ccc;
     font-size: 16px;
 }
+
+@media (max-width: 600px) {
+    .search {
+        padding: 0px 20px 0 20px;
+        grid-template-columns: 1fr;
+    }
+    .aside {
+
+            position: fixed;
+            bottom: 0;
+            display: flex;
+            flex-direction: column-reverse;
+            padding-bottom: 35px;
+            background-color: #252525;
+            left: 0;
+            width: 100%;
+            max-width: 600px;    
+    }
+    .aside-search {
+        margin: 0 8px;
+    }
+    .aside-search h2 {
+        display: none;
+    }
+    .aside__input {
+        width: 100%;
+        padding: 9px 0;
+        margin-top: 10px;
+    }
+}

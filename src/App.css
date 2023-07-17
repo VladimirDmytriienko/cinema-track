@@ -112,3 +112,9 @@ h1, h2, h3, h4, h5, p {
 .trending {
   max-height: 450px;
 }
+
+@media (max-width: 500px) {
+  .banner-swiper .swiper-wrapper {
+    height: 50vh 
+  }
+}

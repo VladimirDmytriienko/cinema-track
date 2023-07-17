@@ -84,3 +84,18 @@
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 800px) {
+    .movieInfo-box{
+          flex-direction: column;
+          margin-top: 8px;
+          padding-bottom: 40px;   
+    }
+    .movie-info__img {
+        max-height: 40vh;
+    }
+    .movieInfo-text {
+        padding: 8px 0 8px 0;
+    }
+
+}

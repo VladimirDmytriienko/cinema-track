@@ -67,3 +67,8 @@ a:visited, a:focus, a:hover {
   color: whitesmoke;
   padding-bottom: 8px;
 }
+@media (max-width: 600px) {
+  .banner-btn {
+    right: 0;
+  }
+}
