@@ -36,7 +36,7 @@ const MovieCard = ({ movie, isFavorite, toggleFavorite }) => {
             <StarHalfTwoToneIcon className="vote_star" /> {movie.vote_average} /
             10
           </p>
-          <Link to={`/${movie.media_type}${movie.id}`}>details</Link>
+          <Link to={`/cinema-track/${movie.media_type}${movie.id}`}>details</Link>
         </span>
 
       </div>

@@ -63,7 +63,7 @@ const SwiperComponent = ({ movies }) => {
                 <p>Play</p>
               </button>
               <button className="play-button">
-                <Link to={`/${movie.media_type}${movie.id}`}>Details</Link>
+                <Link to={`/cinema-track/${movie.media_type}${movie.id}`}>Details</Link>
               </button>
             </div>
           </SwiperSlide>

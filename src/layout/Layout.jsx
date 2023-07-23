@@ -16,7 +16,7 @@ export const Layout = () => {
   const handleLogout = async () => {
     try {
       await logOut();
-      navigate('/');
+      navigate('/cinema-track');
     } catch (error) {
       console.log(error);
     }
@@ -25,34 +25,32 @@ export const Layout = () => {
   return (<>
     <div className="wrp">
       <header className="header">
-
         <div className="header-wrp">
-            <Link className="header-logo" to='/'>
+            <Link className="header-logo" to='/cinema-track'>
               <h1>Cinema track</h1>
             </Link>
-        
             <div className="header-links">
-              <NavLink to="/cinema-track"> <HomeOutlinedIcon/> <span>Home</span> </NavLink>
-              <NavLink to="/movies"><TheatersOutlinedIcon/> <span>Movies</span> </NavLink>
+              <Link to="/cinema-track"> <HomeOutlinedIcon/> <span>Home</span> </Link>
+              <Link to="movies"><TheatersOutlinedIcon/> <span>Movies</span> </Link>
+
               {/* <NavLink to="/favorites">Favorites</NavLink> */}
-              <NavLink to="/search"><SearchRoundedIcon/> <span>Search</span> </NavLink>
+              <Link to="search"><SearchRoundedIcon/> <span>Search</span> </Link>
             </div>
             <ToastContainer  theme="dark"/>
             {
               user?.email ? (
                 <div className="log-wrapper">
-                  <Link to='/account'>
+                  <Link to='login'>
                     <AccountCircleOutlinedIcon/> <h3>Account</h3>
                   </Link>
-                  <span className="logout" onClick={handleLogout}><LogoutOutlinedIcon/> <h3 >Logout</h3></span>
-                  
+                  <span className="logout" onClick={handleLogout}><LogoutOutlinedIcon/> <h3>Logout</h3></span>
               </div>
               ) : (
                 <div className="log-wrapper">
-                  <Link to='/login'>
+                  <Link to='login'>
                    <LoginOutlinedIcon/><h3>Sign In</h3>
                   </Link>
-                  <Link to= '/signup'>
+                  <Link to='signup'>
                      <AppRegistrationOutlinedIcon/> <h3>Sign Up</h3>
                   </Link>
                 </div>
@@ -61,8 +59,6 @@ export const Layout = () => {
             }
 
         </div>
-        
-
       </header>
       <main>
         <Outlet></Outlet>

@@ -12,8 +12,9 @@ const fetchMovieTrailer = async (movieId) => {
     );
 
     const videos = response.data.results;
-
-    const trailerVideo = videos.find((vid) => vid.name === "Official Trailer") || videos[0];
+      console.log(videos); 
+      // Teaser Trailer
+    const trailerVideo = videos.find((vid) => vid.name === "Official Trailer" ) || videos.find((vid) => vid.name === "Teaser Trailer" ) || videos[0];
 
     if (trailerVideo) {
       return trailerVideo.key;

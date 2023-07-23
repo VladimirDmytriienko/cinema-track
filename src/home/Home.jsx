@@ -40,15 +40,12 @@ const Home = () => {
   }, [time]); 
   
   const renderMovies = () => (
-    <Swiper className="trending"  slidesPerView={4}     breakpoints={{
+    <Swiper className="trending"  slidesPerView={6}     breakpoints={{
       0: {
         slidesPerView: 2,
       },
       600: {
-        slidesPerView: 2,
-      },
-      865:{
-        slidesPerView:3
+        slidesPerView: 3,
       },
       1000:{
         slidesPerView:4

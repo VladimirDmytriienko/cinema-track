@@ -71,4 +71,7 @@ a:visited, a:focus, a:hover {
   .banner-btn {
     right: 0;
   }
+  .wrapper{
+    margin-bottom: 35px;
+  }
 }

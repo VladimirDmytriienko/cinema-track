@@ -5,6 +5,7 @@ import "../movie-page/movieInfo.css";
 import YouTube from "react-youtube";
 import Modal from "@mui/material/Modal";
 import fetchMovieTrailer from "../functions/fetchMovieTrailer";
+import ReactPlayer from 'react-player'
 
 const MovieInfo = () => {
   const { movieId } = useParams();
@@ -17,6 +18,8 @@ const MovieInfo = () => {
     const fetchMovieVideos = async () => {
       try {
         const trailerVideoKey = await fetchMovieTrailer(movie.id);
+        console.log(movie);
+        console.log(trailerVideoKey);
         setVideoKey(trailerVideoKey);
       } catch (error) {
         console.error(error);
@@ -50,7 +53,7 @@ const MovieInfo = () => {
       autoplay: 1,
     },
   };
-  
+
   return (
     <div className="movieInfo" style={backdropStyle}>
       <div className="shadow"></div>
@@ -76,7 +79,14 @@ const MovieInfo = () => {
           </button>
           <Modal open={isOpen} onClose={handleCloseModal} className="modal">
             <div className="modal-wrp">
-              <YouTube videoId={videoKey} opts={opts} onEnd={handleCloseModal} />
+              {/* <YouTube videoId={videoKey} opts={opts} onEnd={handleCloseModal} /> */}
+
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=${videoKey}`}
+                controls={true}
+                playing={true}
+              />
+
               <button variant="outlined" onClick={handleCloseModal} className="modal-btn modal-btn__close">
                 &#10005;
               </button>

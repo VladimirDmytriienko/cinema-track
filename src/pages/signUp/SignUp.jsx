@@ -12,7 +12,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await signUp(email, password);
-      navigate('/')
+      navigate('/cinema-track')
     } catch (error) {
       console.log(error);
     }
@@ -47,7 +47,7 @@ const SignUp = () => {
             <span className="signup__login-text">
               Already subscribed to Netflix?
             </span>{" "}
-            <Link to="/login" className="signup__login-link">
+            <Link to="login" className="signup__login-link">
               Sign In
             </Link>
           </p>

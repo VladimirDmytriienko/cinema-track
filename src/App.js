@@ -16,25 +16,23 @@ import Movies from './pages/movies-page/Movies';
 
 
 
-
-
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/cinema-track",
     element: <Layout/>,
     // loader: maindLoader,
     errorElement: <ErrorPage/>,
     children: [
       {
         index: true,
-        path: '/cinema-track',
-        element: <Home/>
+        element: <Home/>,
         // loader: dashboardLoader,
         // action: dashboardAction,
         // errorElement: <Error/>
+        
       },
       { 
-        path: "/movies",
+        path: "movies",
         element: <Movies/>
       },
       // { 
@@ -42,26 +40,25 @@ const router = createBrowserRouter([
       //   element:  <Favorites/>
       // },
       { 
-        path: "/search",
+        path: "search",
         element: <SearchPage/>
       },
       { 
-        path: "/login",
+        path: "login",
         element: <Login/>
       },
       { 
-        path: "/signup",
+        path: "signup",
         element: <SignUp/>
       },
       { 
-        path: "/account",
+        path: "account",
         element: <ProtectedRoute> <Account/> </ProtectedRoute> 
       },
       {
-        path: "/:movieId",
+        path: ":movieId",
         element: <Movie />,
       }
-
     ]
   },
   // {

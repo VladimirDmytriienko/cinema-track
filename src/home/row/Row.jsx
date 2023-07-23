@@ -37,7 +37,7 @@ const Row = ({ title, url }) => {
         slidesPerView: 2,
       },
       600: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       },
       1000:{
         slidesPerView:4

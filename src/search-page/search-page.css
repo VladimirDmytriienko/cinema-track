@@ -39,11 +39,11 @@
         margin: 0 8px;
     }
 }
-.aside-search h2 {
+/* .aside-search h2 {
     @media (width < 600px) {
         display: none;
     }
-}
+} */
 .aside__input {
     padding: 8px 0 8px 4px;
     margin-bottom: 10px;
