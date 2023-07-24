@@ -40,7 +40,7 @@ export const Layout = () => {
             {
               user?.email ? (
                 <div className="log-wrapper">
-                  <Link to='login'>
+                  <Link to='account'>
                     <AccountCircleOutlinedIcon/> <h3>Account</h3>
                   </Link>
                   <span className="logout" onClick={handleLogout}><LogoutOutlinedIcon/> <h3>Logout</h3></span>

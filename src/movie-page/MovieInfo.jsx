@@ -18,8 +18,7 @@ const MovieInfo = () => {
     const fetchMovieVideos = async () => {
       try {
         const trailerVideoKey = await fetchMovieTrailer(movie.id);
-        console.log(movie);
-        console.log(trailerVideoKey);
+
         setVideoKey(trailerVideoKey);
       } catch (error) {
         console.error(error);

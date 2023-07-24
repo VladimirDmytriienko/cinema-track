@@ -8,12 +8,20 @@ const AuthContext = createContext()
 export function AuthContextProvider({children}) {
     const [user, setUser] = useState({})
 
-    function signUp(email, password) {
-         createUserWithEmailAndPassword(auth, email, password)
-         setDoc(doc(db, 'users', email), {
+    async function signUp(email, password) {
+        try {
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          // Успешная регистрация
+          const user = userCredential.user;
+          setDoc(doc(db, 'users', user.email), {
             savedShows: []
-         })
-    }
+          });
+        } catch (error) {
+          // Обработка ошибок при регистрации
+          console.error("Error during sign up:", error);
+          throw error;
+        }
+      }
     function logIn(email, password) {
         return signInWithEmailAndPassword(auth, email, password);
     }

@@ -48,13 +48,13 @@ const Login = () => {
             <input className="signup__checkbox" type="checkbox" />
             Remember me
           </p>
-          <p>Need Help?</p>
+          {/* <p>Need Help?</p> */}
         </div>
         <p className="signup__login">
           <span className="signup__login-text">
               New to Netflix?
           </span>{" "}
-          <Link to="signup" className="signup__login-link">
+          <Link to="/cinema-track/signup" className="signup__login-link">
             Sign Up
           </Link>
         </p>

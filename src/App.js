@@ -11,8 +11,9 @@ import { AuthContextProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import SignUp from './pages/signUp/SignUp';
 import Account from './pages/Account';
-import ProtectedRoute from './components/movie-card/ProtectedRoute';
+
 import Movies from './pages/movies-page/Movies';
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 
@@ -61,10 +62,10 @@ const router = createBrowserRouter([
       }
     ]
   },
-  // {
-  //   path: "*",
-  //   element: <Error/>
-  // },
+  {
+    path: "*",
+    element: <ErrorPage/>
+  },
 ]);
 
 const App = () => {

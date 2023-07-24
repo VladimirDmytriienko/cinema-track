@@ -14,12 +14,14 @@ const SignUp = () => {
       await signUp(email, password);
       navigate('/cinema-track')
     } catch (error) {
+      alert(error);
       console.log(error);
     }
   };
   return (
     <div className="form">
       <div className="signup">
+        <h2 className='text-3xl font-bold'>Sign Up</h2>
         <form onSubmit={handleSubmit} className="signup__form">
           <input
             onChange={(e) => setEmail(e.target.value)}
@@ -41,13 +43,13 @@ const SignUp = () => {
               <input className="signup__checkbox" type="checkbox" />
               Remember me
             </p>
-            <p>Need Help?</p>
+            {/* <p>Need Help?</p> */}
           </div>
           <p className="signup__login">
             <span className="signup__login-text">
               Already subscribed to Netflix?
             </span>{" "}
-            <Link to="login" className="signup__login-link">
+            <Link to="/cinema-track/login" className="signup__login-link">
               Sign In
             </Link>
           </p>
