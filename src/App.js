@@ -1,12 +1,12 @@
 import './App.css';
-import { ErrorPage } from './ErrorPage';
+
 // import Favorites from './Favorites';
 import { Layout } from './layout/Layout';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './home/Home';
-import Movie from './Movie';
-import SearchPage from './search-page/SearchPage';
+import Movie from './pages/Movie';
+import SearchPage from './pages/search-page/SearchPage';
 import { AuthContextProvider } from './context/AuthContext';
 import Login from './pages/Login';
 import SignUp from './pages/signUp/SignUp';
@@ -14,6 +14,7 @@ import Account from './pages/Account';
 
 import Movies from './pages/movies-page/Movies';
 import ProtectedRoute from './components/ProtectedRoute';
+import { ErrorPage } from './pages/ErrorPage';
 
 
 

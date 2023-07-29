@@ -2,8 +2,9 @@ import axios from "axios";
 
 const fetchMovieTrailer = async (movieId) => {
   try {
+    console.log("rendering");
     const response = await axios.get(
-      `http://api.themoviedb.org/3/movie/${movieId}/videos`,
+      `https://api.themoviedb.org/3/movie/${movieId}/videos`,
       {
         params: {
           api_key: process.env.REACT_APP_MOVIE_API_KEY,

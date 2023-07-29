@@ -1,4 +1,4 @@
-import Favorites from '../Favorites'
+import Favorites from './Favorites'
 const Account = () => {
   return (
     <div >

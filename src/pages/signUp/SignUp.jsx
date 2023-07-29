@@ -14,8 +14,12 @@ const SignUp = () => {
       await signUp(email, password);
       navigate('/cinema-track')
     } catch (error) {
-      alert(error);
-      console.log(error);
+      if (error =="FirebaseError: Firebase: Error (auth/email-already-in-use).") {
+        alert ( "email-already-in-use")
+      } else {
+        alert(error);
+      }
+      // console.log(error);
     }
   };
   return (

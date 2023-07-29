@@ -2,6 +2,7 @@
     margin: auto;
     max-width: 1400px;
     padding: 45px 10px;
+    padding-bottom: 20px;
     @media (width <=850px) {
       padding: 10px 10px 40px ;
     }
@@ -16,16 +17,39 @@
 
 }
 .item {
-    margin: 20px;
+  margin: 20px;
 }
-
+.load-more {
+  background-color: #7a8e9b; 
+  margin: auto;
+ 
+  margin-top: 20px;
+  max-width: 200px;
+  color: #ffffff; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 20px;
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+.load-more:hover {
+  background-color: #ffffff; 
+  color: black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 @media (max-width: 850px) {
   .movies {
     padding: 10px 10px 40px ;
   }
   .wrapper-movies {
     grid-template-columns: 1fr 1fr ;
-    margin-bottom: 30px;
+    margin-bottom: 9px;
+  }
+  .load-more {
+    margin-top: 18px;
+    margin-bottom: 8px;
   }
 
 }
+

@@ -11,13 +11,13 @@ export function AuthContextProvider({children}) {
     async function signUp(email, password) {
         try {
           const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-          // Успешная регистрация
+
           const user = userCredential.user;
           setDoc(doc(db, 'users', user.email), {
             savedShows: []
           });
         } catch (error) {
-          // Обработка ошибок при регистрации
+
           console.error("Error during sign up:", error);
           throw error;
         }

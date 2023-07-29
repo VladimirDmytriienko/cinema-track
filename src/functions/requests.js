@@ -1,6 +1,6 @@
 const key = process.env.REACT_APP_MOVIE_API_KEY;
 const currentDate = new Date();
-const startDate = currentDate.toISOString().split("T")[0]; // Текущая дата
+const startDate = currentDate.toISOString().split("T")[0]; 
 
 const endDate = new Date(currentDate.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0]; 
 

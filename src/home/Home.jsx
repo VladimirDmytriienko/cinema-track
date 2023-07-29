@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MovieCard from "../components/movie-card/MovieCard";
 import useFavorites from "../custom-hook/useFavorites";
-import SwiperComponent from "../SwiperComponent";
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Toggle from "./toggle/Toggle";
 import requests from "../functions/requests";
 import Row from "./row/Row";
+import SwiperComponent from "../components/SwiperComponent";
 // import 'swiper/css';
 // import 'swiper/css/pagination';
 // import 'swiper/css/navigation';
