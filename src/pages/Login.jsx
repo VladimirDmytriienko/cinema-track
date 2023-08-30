@@ -52,7 +52,7 @@ const Login = () => {
         </div>
         <p className="signup__login">
           <span className="signup__login-text">
-              New to Netflix?
+              New cinema-track?
           </span>{" "}
           <Link to="/cinema-track/signup" className="signup__login-link">
             Sign Up
