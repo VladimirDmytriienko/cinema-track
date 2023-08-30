@@ -10,7 +10,7 @@ import Movies from './pages/movies-page/Movies';
 const App = () => {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: '/cinema-track',
       element: <Layout />,
       // loader: maindLoader,
       errorElement: <ErrorPage />,
