@@ -1,16 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,  } from "react";
 import axios from "axios";
 import MovieCard from "../components/movie-card/MovieCard";
 import useFavorites from "../custom-hook/useFavorites";
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Toggle from "./toggle/Toggle";
 import requests from "../functions/requests";
 import Row from "./row/Row";
 import SwiperComponent from "../components/SwiperComponent";
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
+
 const Home = () => {
   const API_URL = "https://api.themoviedb.org/3";
   const [time, setTime] = useState("day");
@@ -31,14 +28,16 @@ const Home = () => {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+  fetchPopularMovies(time);
+  }, [time]); 
+
   const handleTimeChange = (time) => {
     setTime(time);
     fetchPopularMovies(time); 
   };
-
-  useEffect(() => {
-    fetchPopularMovies(time);
-  }, [time]); 
+  
   
   const renderMovies = () => (
     <Swiper className="trending"  slidesPerView={6}     breakpoints={{
@@ -63,7 +62,7 @@ const Home = () => {
       ))}
     </Swiper>
   );
-  
+
 
   return (
     <>
@@ -71,7 +70,7 @@ const Home = () => {
       
       <div className="wrapper">
         <div><Toggle handleTimeChange={handleTimeChange}/></div>
-        
+      
 
         {renderMovies()}
         <Row title="Upcoming" url={requests.requestUpcoming}></Row>

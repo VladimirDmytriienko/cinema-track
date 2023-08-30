@@ -1,15 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useMovie from "../../custom-hook/useMovie";
 import "./movieInfo.css";
-import YouTube from "react-youtube";
 import Modal from "@mui/material/Modal";
 import fetchMovieTrailer from "../../functions/fetchMovieTrailer";
 import ReactPlayer from 'react-player'
 
 const MovieInfo = () => {
   const { movieId } = useParams();
-
   const { movie } = useMovie(movieId);
   const [videoKey, setVideoKey] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -34,13 +32,10 @@ const MovieInfo = () => {
     display: "flex",
     minHeight: "100vh",
   };
-  const opts = {
-    height: "315",
-    width: "560",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
+
+  const playerWidth = window.innerWidth < 850 ? "100vw" : "50vw";
+
+
 
   return (
     <div className="movieInfo" style={backdropStyle}>
@@ -57,22 +52,21 @@ const MovieInfo = () => {
           <h1>{movie.original_title || movie.name}</h1>
           <h4>Tagline: {movie.tagline}</h4>
           <p>{movie.status}</p>
-
-          <p>{movie.overview}</p>
           <p>Release Date: {movie.release_date}</p>
+
           <p>Vote: {movie.vote_average}</p>
+          <p>{movie.overview}</p>
 
           <button variant="outlined" onClick={handleOpenModal} className="modal-btn">
             Watch Trailer
           </button>
           <Modal open={isOpen} onClose={handleCloseModal} className="modal">
             <div className="modal-wrp">
-              {/* <YouTube videoId={videoKey} opts={opts} onEnd={handleCloseModal} /> */}
-
               <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${videoKey}`}
                 controls={true}
                 playing={true}
+                width={playerWidth}
               />
 
               <button variant="outlined" onClick={handleCloseModal} className="modal-btn modal-btn__close">

@@ -1,4 +1,4 @@
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom"
+import { Link, Outlet, useNavigate } from "react-router-dom"
 import '../layout/layout.css'
 import { UserAuth } from "../context/AuthContext"
 import { ToastContainer } from "react-toastify"
@@ -10,9 +10,11 @@ import LoginOutlinedIcon from '@mui/icons-material/LoginOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import AppRegistrationOutlinedIcon from '@mui/icons-material/AppRegistrationOutlined';
 
-export const Layout = () => {
+
+const Layout = () => {
   const { user, logOut} = UserAuth()
   const navigate = useNavigate();
+
   const handleLogout = async () => {
     try {
       await logOut();
@@ -21,6 +23,26 @@ export const Layout = () => {
       console.log(error);
     }
   };
+  
+  const authLinks =  (
+    <div className="log-wrapper">
+      <Link to='account'>
+        <AccountCircleOutlinedIcon/> <h3>Account</h3>
+      </Link>
+      <span className="logout" onClick={handleLogout}><LogoutOutlinedIcon/> <h3>Logout</h3></span>
+    </div>
+  )
+  const nonAuthLinks = (
+    <div className="log-wrapper">
+      <Link to='login'>
+       <LoginOutlinedIcon/><h3>Sign In</h3>
+      </Link>
+      <Link to='signup'>
+         <AppRegistrationOutlinedIcon/> <h3>Sign Up</h3>
+      </Link>
+    </div>
+
+  )
 
   return (<>
     <div className="wrp">
@@ -29,34 +51,16 @@ export const Layout = () => {
             <Link className="header-logo" to='/cinema-track'>
               <h1>Cinema track</h1>
             </Link>
+
             <div className="header-links">
               <Link to="/cinema-track"> <HomeOutlinedIcon/> <span>Home</span> </Link>
-              <Link to="movies"><TheatersOutlinedIcon/> <span>Movies</span> </Link>
-
-              {/* <NavLink to="/favorites">Favorites</NavLink> */}
+              <Link to="movies"> <TheatersOutlinedIcon/> <span>Movies</span> </Link>
+              {/* <Link to="tv"> <LiveTvIcon/> <span> TV</span> </Link> */}
               <Link to="search"><SearchRoundedIcon/> <span>Search</span> </Link>
             </div>
             <ToastContainer  theme="dark"/>
-            {
-              user?.email ? (
-                <div className="log-wrapper">
-                  <Link to='account'>
-                    <AccountCircleOutlinedIcon/> <h3>Account</h3>
-                  </Link>
-                  <span className="logout" onClick={handleLogout}><LogoutOutlinedIcon/> <h3>Logout</h3></span>
-              </div>
-              ) : (
-                <div className="log-wrapper">
-                  <Link to='login'>
-                   <LoginOutlinedIcon/><h3>Sign In</h3>
-                  </Link>
-                  <Link to='signup'>
-                     <AppRegistrationOutlinedIcon/> <h3>Sign Up</h3>
-                  </Link>
-                </div>
 
-              )
-            }
+            {  user?.email ? authLinks : nonAuthLinks }
 
         </div>
       </header>
@@ -67,4 +71,6 @@ export const Layout = () => {
   </>
 
   )
-}
+};
+
+export default Layout;

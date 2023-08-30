@@ -117,10 +117,10 @@ const SearchPage = () => {
               onChange={(e) => setType(e.target.value)}
             >
               <option key="01" value="movie">
-                movie
+                Movie
               </option>
               <option key="02" value="tv">
-                tv
+                Tv
               </option>
 
             </select>

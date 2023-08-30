@@ -75,7 +75,9 @@
     border: 1px solid #ccc;
     font-size: 16px;
 }
-
+select {
+    color: 	#696969 /* Устанавливаем желаемый цвет текста */
+}
 @media (max-width: 600px) {
     .search {
         padding: 0px 20px 0 20px;
