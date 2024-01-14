@@ -1,6 +1,6 @@
 ![Снимок экрана 2024-01-14 205840](https://github.com/VladimirDmytriienko/cinema-track/assets/89876159/5be851bb-c0b4-4d5e-b7a8-44573771fa69)
 ![Снимок экрана 2024-01-14 205949](https://github.com/VladimirDmytriienko/cinema-track/assets/89876159/963b04bc-c18a-43a9-91ac-28b727dff2b7)
-
+![Снимок экрана 2024-01-14 210514](https://github.com/VladimirDmytriienko/cinema-track/assets/89876159/9d41e468-2da3-47bb-90b5-fdc055f09438)
 # Mobile verizon
 ![Снимок экрана 2024-01-14 210100](https://github.com/VladimirDmytriienko/cinema-track/assets/89876159/1e3418f3-fc7e-4de8-8488-dd2d17a7f07b)
 ![Снимок экрана 2024-01-14 210229](https://github.com/VladimirDmytriienko/cinema-track/assets/89876159/7f60c76b-2d55-48ba-a1e2-99203d0a2174)
